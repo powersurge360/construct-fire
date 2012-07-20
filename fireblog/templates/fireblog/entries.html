@@ -1,0 +1,27 @@
+{% extends "_layouts/base.html" %}
+
+{% block title %}
+    {{ block.super }}: Blog Entries
+{% endblock %}
+
+{% block content %}
+{% if is_paginated %}
+<aside class="span4 pull-right">
+    Place holder for an aside
+</aside>
+<section class="span8">
+{% else %}
+<section class="span12">
+{% endif %}
+    <ol>
+        {% for entry in entries %}
+            <li>
+                <h3>{{ entry.title }}</h3>
+                <details>
+                    {{ entry.intro }}
+                </details>
+            </li>
+        {% endfor %}
+    </ol>
+</section>
+{% endblock %}

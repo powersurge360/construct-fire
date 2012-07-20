@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Construct Fire{% endblock %}</title>
+    <link type="text/css" href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link type="text/css" href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="{{ STATIC_URL }}css/site.css" rel="stylesheet">
+    {% block extra_css %}
+    {% endblock %}
+    <script src="{{ STATIC_URL }}boostrap/js/boostrap.min.js"></script>
+    {% block extra_js %}
+    {% endblock %}
+</head>
+<body class="container">
+    <header class="row-fluid">
+        <nav>
+            <ul>
+                <li class="span6">
+                    <h1>
+                        Construct Fire
+                    </h1>
+                </li>
+                <li class="span2">
+                    <h2>
+                        Blog
+                    </h2>
+                </li>
+                <li class="span2">
+                    <h2>
+                        Contact
+                    </h2>
+                </li>
+                <li class="span2">
+                    <h2>
+                        Biography
+                    </h2>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section id="content" class="row">
+    {% block content %}{% endblock %}
+    </section>
+</body>
+</html>
