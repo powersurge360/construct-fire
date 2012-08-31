@@ -85,6 +85,16 @@ class EntryAdmin(LiveServerTestCase):
         self.browser.quit()
 
 
+class EntryFrontend(LiveServerTestCase):
+    fixtures = ["users", "entries"]
+
+    def setUp(self):
+        self.browser = webdriver.Firefox()
+
+    def tearDown(self):
+        self.browser.quit()
+
+
 class EntryTests(SimpleTestCase):
     fixtures = ["users"]
 

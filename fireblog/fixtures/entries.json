@@ -1,0 +1,16 @@
+[
+    {
+        "model": "fireblog.entry",
+        "pk": 1,
+        "fields": {
+            "title": "I can't believe it's not butter!",
+            "slug": "i-cant-believe-its",
+            "intro": "A small introduction as to how this butter is incredible.",
+            "markup": "<h1>Butter, what is thou?</h1>",
+            "body": "#Butter what is thou?",
+            "date": "2012-05-21",
+            "published": "p",
+            "author": 1
+        }
+    }
+]
