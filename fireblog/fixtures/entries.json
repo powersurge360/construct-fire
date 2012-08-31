@@ -1,16 +1,1 @@
-[
-    {
-        "model": "fireblog.entry",
-        "pk": 1,
-        "fields": {
-            "title": "I can't believe it's not butter!",
-            "slug": "i-cant-believe-its",
-            "intro": "A small introduction as to how this butter is incredible.",
-            "markup": "<h1>Butter, what is thou?</h1>",
-            "body": "#Butter what is thou?",
-            "date": "2012-05-21",
-            "published": "p",
-            "author": 1
-        }
-    }
-]
+[{"pk": 1, "model": "fireblog.entry", "fields": {"body": "What", "title": "Test", "markup": "<p>What</p>", "author": 1, "intro": "I can't beleive I'm testing!", "published": "p", "date": "2012-06-16", "slug": "test"}}, {"pk": 2, "model": "fireblog.entry", "fields": {"body": "laksjdlaksdal\r\n\r\nHello!", "title": "LAKSjdalksd", "markup": "<p>laksjdlaksdal</p>\n<p>Hello!</p>", "author": 1, "intro": "ASLKDjal", "published": "p", "date": "2012-08-30", "slug": "laksjdalksd"}}, {"pk": 3, "model": "fireblog.entry", "fields": {"body": "ljaslkdjalsdjlafsa", "title": "dlkvdaljsflkamcsklaml", "markup": "<p>ljaslkdjalsdjlafsa</p>", "author": 1, "intro": "kljaslkajdlaskmd", "published": "p", "date": "2012-06-29", "slug": "dlkvdaljsflkamcsklaml"}}]
