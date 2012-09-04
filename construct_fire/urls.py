@@ -7,5 +7,5 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^blog/', include(fireblog.urls.namespace)),
+    url(r'^blog/', include(*fireblog.urls.namespace)),
 )

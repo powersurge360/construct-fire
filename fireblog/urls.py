@@ -6,4 +6,4 @@ urlpatterns = patterns('',
     url(r'^(?P<slug>[\w-]+)/$', EntryDetailView.as_view(), name="detail"),
 )
 
-namespace = urlpatterns, "fireblog", ""
+namespace = urlpatterns, "fireblog"
