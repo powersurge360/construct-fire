@@ -16,7 +16,7 @@
     <ol>
         {% for entry in entries %}
             <li>
-                <h3>{{ entry.title }}</h3>
+                <h3><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></h3>
                 <details>
                     {{ entry.intro }}
                 </details>
