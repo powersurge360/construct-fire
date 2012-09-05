@@ -22,7 +22,7 @@ class Entry(models.Model):
 
     @models.permalink
     def get_absolute_url(self):
-        return ("detail", [self.slug])
+        return ("fireblog:detail", [self.slug])
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
