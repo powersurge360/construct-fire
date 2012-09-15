@@ -1,3 +1,16 @@
 ol li, ul li {
     list-style: none;
 }
+
+html {
+    background-image: url("../light_toast/light_toast.png");
+}
+
+body {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.row, .row-fluid {
+    background-color: white;
+}
