@@ -5,19 +5,21 @@
 {% endblock %}
 
 {% block content %}
-    <article class="span12">
-        <header class="row">
-            <h2 class="span12">
-                {{ entry.title }}
-            </h2>
-            <section class="span12 intro">
-                {{ entry.intro }}
+    <div class="row">
+        <article class="span12">
+            <header class="row">
+                <h2 class="span12">
+                    {{ entry.title }}
+                </h2>
+                <section class="span12 intro">
+                    {{ entry.intro }}
+                </section>
+            </header>
+            <section class="row">
+                <div class="span12">
+                    {{ entry.markup|safe }}
+                </div>
             </section>
-        </header>
-        <section class="row">
-            <div class="span12">
-                {{ entry.markup|safe }}
-            </div>
-        </section>
-    </article>
+        </article>
+    </div>
 {% endblock %}

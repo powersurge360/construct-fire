@@ -5,23 +5,47 @@
 {% endblock %}
 
 {% block content %}
+<div class="row">
+    <section class="span12">
+        <ol>
+            {% for entry in entries %}
+                <li>
+                    <h3><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></h3>
+                    <details>
+                        {{ entry.intro }}
+                    </details>
+                </li>
+            {% endfor %}
+        </ol>
+    </section>
+</div>
 {% if is_paginated %}
-<aside class="span4 pull-right">
-    Place holder for an aside
-</aside>
-<section class="span8">
-{% else %}
-<section class="span12">
+<div class="row">
+    <section class="span8 offset4">
+        <div class="pagination">
+            <ul>
+                {% if page_obj.has_previous %}
+                <li>
+                    <a href="?page={{ page_obj.previous_page_number }}">
+                        <
+                    </a>
+                </li>
+                {% endif %}
+                <li>
+                    <a href="?page={{ page_obj.number }}">
+                        {{ page_obj.number }}
+                    </a>
+                </li>
+                {% if page_obj.has_next %}
+                <li>
+                    <a href="?page={{ page_obj.next_page_number }}">
+                        >
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </section>
+</div>
 {% endif %}
-    <ol>
-        {% for entry in entries %}
-            <li>
-                <h3><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></h3>
-                <details>
-                    {{ entry.intro }}
-                </details>
-            </li>
-        {% endfor %}
-    </ol>
-</section>
 {% endblock %}

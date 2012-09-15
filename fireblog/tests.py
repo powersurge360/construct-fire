@@ -91,6 +91,18 @@ class EntryFrontend(LiveServerTestCase):
     def setUp(self):
         self.browser = webdriver.Firefox()
 
+    def test_navigate_to_entries(self):
+        # User navigates to the page
+        self.browser.get(self.live_server_url)
+
+        # User clicks the blogs navigation item.
+
+    def test_entry_list(self):
+        # User navigates to the blogs section
+        self.test_navigate_to_entries()
+
+        # User sees that there are entries and clicks one.
+
     def tearDown(self):
         self.browser.quit()
 

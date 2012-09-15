@@ -7,7 +7,6 @@
     <link type="text/css" href="{{ STATIC_URL }}css/site.css" rel="stylesheet">
     {% block extra_css %}
     {% endblock %}
-    <script src="{{ STATIC_URL }}boostrap/js/boostrap.min.js"></script>
     {% block extra_js %}
     {% endblock %}
 </head>
@@ -37,7 +36,7 @@
             </ul>
         </nav>
     </header>
-    <section id="content" class="row">
+    <section id="content">
     {% block content %}{% endblock %}
     </section>
 </body>
