@@ -80,6 +80,10 @@ class EntryAdmin(LiveServerTestCase):
         published = self.browser.find_elements_by_css_selector(".row1 td")
         self.assertIn("Published", published[2].text)
 
+    def test_publish_multiple_entries(self):
+        # TODO: Implement
+        pass
+
     def tearDown(self):
         Entry.objects.all().delete()
         self.browser.quit()
