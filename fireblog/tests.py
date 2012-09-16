@@ -1,5 +1,6 @@
-from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
+from django.core.urlresolvers import reverse
 from django.db import IntegrityError
 from django.test import LiveServerTestCase, SimpleTestCase
 from selenium import webdriver
@@ -81,8 +82,34 @@ class EntryAdmin(LiveServerTestCase):
         self.assertIn("Published", published[2].text)
 
     def test_publish_multiple_entries(self):
-        # TODO: Implement
-        pass
+        # Set up
+        Entry.objects.all().update(published="d")
+        self.assertTrue(all([
+            entry.published == "d"
+            for entry in Entry.objects.all()
+        ]))
+
+        # User logs in.
+        self.log_in()
+
+        # User clicks blog link.
+        self.browser.find_element_by_link_text("Entries").click()
+
+        # User updates all drafts to be published.
+        self.browser.find_element_by_id("action-toggle").click()
+        action_bar = self.browser.find_element_by_name("action")
+        for option in action_bar.find_elements_by_tag_name("option"):
+            if option.text == "Publish selected Entries":
+                option.click()
+
+        self.browser.find_element_by_css_selector(
+            "button[title='Run the selected action']"
+        ).click()
+
+        self.assertTrue(all([
+            entry.published == "p"
+            for entry in Entry.objects.all()
+        ]))
 
     def tearDown(self):
         Entry.objects.all().delete()
@@ -95,19 +122,20 @@ class EntryFrontend(LiveServerTestCase):
     def setUp(self):
         self.browser = webdriver.Firefox()
 
-    def test_navigate_to_entries(self):
-        # User navigates to the page
-        self.browser.get(self.live_server_url)
-
-        # User clicks the blogs navigation item.
-
     def test_entry_list(self):
         # User navigates to the blogs section
-        self.test_navigate_to_entries()
+        self.browser.get(self.live_server_url + reverse("fireblog:home"))
 
-        # User sees that there are entries and clicks one.
+        # User clicks an entry.
+        self.browser.find_element_by_link_text("Test").click()
+
+        # User sees the blog entry.
+        title = self.browser.find_element_by_css_selector("#content h2")
+
+        self.assertIn("Test", title.text)
 
     def tearDown(self):
+        Entry.objects.all().delete()
         self.browser.quit()
 
 
