@@ -12,25 +12,25 @@
 </head>
 <body class="container">
     <header class="row">
-        <nav>
-            <div class="span6">
-                <h1>
+        <nav class="navbar">
+            <div class="navbar-inner">
+                <div class="brand">
                     <a href="/">
                         Construct Fire
                     </a>
-                </h1>
-            </div>
-            <div class="span3">
-                <h2>
-                    <a href="{% url fireblog:home %}">
-                        Blog
-                    </a>
-                </h2>
-            </div>
-            <div class="span3">
-                <h2>
-                    Contact
-                </h2>
+                </div>
+                <ul class="nav">
+                    <li class="{% block blog_nav %}{% endblock %}">
+                        <a href="{% url fireblog:home %}">
+                            Blog
+                        </a>
+                    </li>
+                    <li class="{% block contact_nav %}{% endblock %}">
+                        <a href="#">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
