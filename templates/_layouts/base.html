@@ -2,16 +2,18 @@
 <html>
 <head>
     <title>{% block title %}Construct Fire{% endblock %}</title>
-    <link type="text/css" href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
     <link type="text/css" href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link type="text/css" href="{{ STATIC_URL }}css/site.css" rel="stylesheet">
     {% block extra_css %}
     {% endblock %}
     {% block extra_js %}
     {% endblock %}
 </head>
-<body class="container">
-    <header class="row">
+<body>
+    <div class="container">
+    <header>
         <nav class="navbar">
             <div class="navbar-inner">
                 <div class="brand">
@@ -34,8 +36,9 @@
             </div>
         </nav>
     </header>
-    <section id="content">
+    <section id="content" class="content">
     {% block content %}{% endblock %}
     </section>
+    </div>
 </body>
 </html>

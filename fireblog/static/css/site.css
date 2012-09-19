@@ -2,15 +2,18 @@ ol li, ul li {
     list-style: none;
 }
 
-html {
+body {
     background-image: url("../light_toast/light_toast.png");
 }
 
-body {
+.container {
     margin-top: 10px;
     margin-bottom: 10px;
+    background-color: white;
 }
 
-.row, .row-fluid {
-    background-color: white;
+.span1 > *, .span2 > *, .span3 > *, .span4 > *, .span5 > *,
+.span6 > *, .span7 > *, .span8 > *, .span9 > *, .span10 > *,
+.span11 > *, .span12 > * {
+    padding: 0 15px;
 }
