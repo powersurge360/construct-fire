@@ -1,0 +1,25 @@
+{% extends "_layouts/base.html" %}
+
+{% block title %}
+    {{ block.super }}: Contact
+{% endblock %}
+
+{% block contact_nav %}active{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="span4 offset1">
+            <h2>Contact</h2>
+            <form class="well" method="post">{% csrf_token %}
+                <fieldset>
+                    {{ form }}
+                </fieldset>
+                <div class="form-actions">
+                    <button type="submit" class="pull-right btn btn-primary">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
