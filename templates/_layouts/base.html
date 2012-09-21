@@ -3,8 +3,7 @@
 <head>
     <title>{% block title %}Construct Fire{% endblock %}</title>
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
-    <link type="text/css" href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link type="text/css" href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link type="text/css" href="{{ STATIC_URL }}css/normalize.css" rel="stylesheet">
     <link type="text/css" href="{{ STATIC_URL }}css/site.css" rel="stylesheet">
     {% block extra_css %}
     {% endblock %}
@@ -12,31 +11,28 @@
     {% endblock %}
 </head>
 <body>
-    <div class="container">
     <header>
         <nav class="navbar">
-            <div class="navbar-inner">
-                <div class="brand">
+            <ul>
+                <li>
                     <a href="/">
                         Construct Fire
                     </a>
-                </div>
-                <ul class="nav">
-                    <li class="{% block blog_nav %}{% endblock %}">
-                        <a href="{% url fireblog:home %}">
-                            Blog
-                        </a>
-                    </li>
-                    <li class="{% block contact_nav %}{% endblock %}">
-                        <a href="{% url firecontact:contact %}">
-                            Contact
-                        </a>
-                    </li>
-                </ul>
-            </div>
+                </li>
+                <li class="{% block blog_nav %}{% endblock %}">
+                    <a href="{% url fireblog:home %}">
+                        Blog
+                    </a>
+                </li>
+                <li class="{% block contact_nav %}{% endblock %}">
+                    <a href="{% url firecontact:contact %}">
+                        Contact
+                    </a>
+                </li>
+            </ul>
         </nav>
     </header>
-    <section id="content" class="content">
+    <section id="content">
     {% block content %}{% endblock %}
     </section>
     </div>

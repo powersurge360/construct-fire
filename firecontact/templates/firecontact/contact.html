@@ -8,17 +8,15 @@
 
 {% block content %}
     <div class="row">
-        <div class="span4 offset1">
+        <div>
             <h2>Contact</h2>
-            <form class="well" method="post">{% csrf_token %}
+            <form method="post">{% csrf_token %}
                 <fieldset>
                     {{ form }}
                 </fieldset>
-                <div class="form-actions">
-                    <button type="submit" class="pull-right btn btn-primary">
-                        Submit
-                    </button>
-                </div>
+                <button type="submit">
+                    Submit
+                </button>
             </form>
         </div>
     </div>

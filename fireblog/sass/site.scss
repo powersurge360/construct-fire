@@ -1,0 +1,88 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+html {
+    background-color: #2A4480;
+}
+
+a, a:visited, a:hover {
+    color: #2a4480;
+    text-decoration: none;
+}
+
+body {
+    @include outer-container;
+
+    font-family: $helvetica;
+    margin-top: 1.5em;
+
+    #content, & > header {
+        @include span-columns(12);
+
+        background-color: white;
+
+        .archive {
+            @include pad;
+            @include span-columns(12);
+
+            dt {
+                font-size: 1.5em;
+            }
+
+            dd {
+                margin-bottom: 1.5em;
+            }
+        }
+
+        .pagination {
+            @include span-columns(12);
+        }
+    }
+
+    #content {
+        form {
+            @include pad;
+            @include span-columns(1);
+        }
+
+        article {
+            @include pad;
+            @include span-columns(12);
+        }
+    }
+
+    & > header {
+        @include border-radius(10px 10px 0px 0px);
+        
+        background-color: #1240AB;
+        color: white;
+        height: 5em;
+
+        a, a:hover, a:active, a:visited {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    & > header li:first-child {
+        @include span-columns(6 of 12);
+        @include shift(0);
+
+        font-size: 2em;
+        padding-top: 0.5em;
+    }
+
+    & > header li {
+        @include shift(1);
+        @include span-columns(2 of 12);
+
+        font-size: 1.5em;
+        padding-top: 1em;
+    }
+}
+
+ul li, ol li, dl dt, dl dd {
+    list-style-type: none;
+    text-indent: 0;
+    margin: 0;
+}
