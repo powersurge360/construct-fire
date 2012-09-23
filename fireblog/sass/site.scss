@@ -5,9 +5,24 @@ html {
     background-color: #2A4480;
 }
 
-a, a:visited, a:hover {
+a, a:visited, a:hover, h1, h2, h3, h4, h5, h6 {
     color: #2a4480;
     text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar {
+    font-family: $georgia;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a.call-to-action {
+    @include button(shiny);
+    @include span-columns(2);
+    @include shift(5);
+    color: white;
 }
 
 body {
@@ -18,8 +33,14 @@ body {
 
     #content, & > header {
         @include span-columns(12);
+    }
+
+    #content {
+        @include border-radius(0 0 5px 5px);
 
         background-color: white;
+        margin-bottom: 1.5em;
+        padding-bottom: 1em;
 
         .archive {
             @include pad;
@@ -34,15 +55,64 @@ body {
             }
         }
 
+        .hero {
+            @include pad;
+            @include shift(1);
+            @include span-columns(10);
+
+            text-align: center;
+        }
+
+        .window {
+            @include span-columns(4);
+            @include nth-omega(3n+1);
+            
+            p, h2 {
+                padding: 0.5em 1em;
+            }
+
+            h2 {
+                text-align: center;
+            }
+
+            .inner {
+                @include border-radius(15px);
+                background-color: lightgray;
+                height: 25em;
+                margin: 1em;
+            }
+        }
+
         .pagination {
             @include span-columns(12);
         }
-    }
-
-    #content {
-        form {
+        .contact-me {
             @include pad;
-            @include span-columns(1);
+
+            form {
+                @include shift(1);
+                @include span-columns(4);
+                margin-bottom: 1em;
+
+                input, textarea {
+                    @include span-columns(4 of 4);
+                    margin-bottom: 1em;
+                }
+
+                .errorlist {
+                    color: red;
+                }
+            }
+
+            aside {
+                @include shift(1);
+                @include span-columns(4);
+
+                ul li {
+                    list-style-type: disc;
+                    margin-bottom: 1em;
+                }
+            }
         }
 
         article {
@@ -61,6 +131,12 @@ body {
         a, a:hover, a:active, a:visited {
             text-decoration: none;
             color: inherit;
+            padding: .5em;
+        }
+
+        .active a {
+            background: white;
+            color: #1240AB;
         }
     }
 
@@ -81,7 +157,7 @@ body {
     }
 }
 
-ul li, ol li, dl dt, dl dd {
+ul li, ol li, dl dt, dl dd, .errorlist {
     list-style-type: none;
     text-indent: 0;
     margin: 0;

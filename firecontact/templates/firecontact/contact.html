@@ -7,17 +7,38 @@
 {% block contact_nav %}active{% endblock %}
 
 {% block content %}
-    <div class="row">
-        <div>
-            <h2>Contact</h2>
-            <form method="post">{% csrf_token %}
-                <fieldset>
-                    {{ form }}
-                </fieldset>
-                <button type="submit">
-                    Submit
-                </button>
-            </form>
-        </div>
-    </div>
+    <section class="contact-me">
+        <aside>
+            <p>
+                You're writing me a letter? How nice. Just a few things to keep in mind:
+            </p>
+            <ul>
+                <li>
+                    I'm always interested in a new idea
+                </li>
+                <li>
+                    I'm not particularly interested in recruiters
+                </li>
+                <li>
+                    <b>Always</b> in the mood for a partnership
+                </li>
+            </ul>
+        </aside>
+        <form method="post">{% csrf_token %}
+            {% for field in form %}
+                <dl>
+                    <dt>
+                        {{ field.label }}
+                    </dt>
+                    {{ field.errors }}
+                    <dd>
+                        {{ field }}
+                    </dd>
+                </dl>
+            {% endfor %}
+            <button type="submit">
+                Submit
+            </button>
+        </form>
+    </section>
 {% endblock %}

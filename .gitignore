@@ -1,3 +1,4 @@
 local_settings.py
 database.sqlite
 static
+.sass-cache
