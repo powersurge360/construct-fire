@@ -1,0 +1,9 @@
+Django==1.4
+Fabric==1.4.3
+Markdown==2.1.1
+South==0.7.5
+argparse==1.2.1
+pycrypto==2.6
+selenium==2.21.3
+ssh==1.7.14
+wsgiref==0.1.2
