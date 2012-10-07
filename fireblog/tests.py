@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.core.urlresolvers import reverse
 from django.db import IntegrityError
-from django.test import LiveServerTestCase, SimpleTestCase
+from django.test import LiveServerTestCase, TestCase
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
@@ -139,7 +139,7 @@ class EntryFrontend(LiveServerTestCase):
         self.browser.quit()
 
 
-class EntryTests(SimpleTestCase):
+class EntryTests(TestCase):
     fixtures = ["users"]
 
     def test_create_entry_success(self):
